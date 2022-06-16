@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "sami-b41b"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "sami-b41b"
+  template:
+    metadata:
+      labels:
+        app: "sami-b41b"
+    spec:
+      containers:
+        - name: "sami-b41b"
+          image: "samiur.azurecr.io/sami"
+          ports:
+          - containerPort: 80
